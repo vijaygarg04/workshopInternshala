@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+
+    android:gravity="center"
+    android:padding="10dp"
+    tools:context="com.example.vijaygarg.workshop.SignUpActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EMAIL"
+        android:textColor="#000000"
+        />
+    <EditText
+        android:textColor="#6404FF"
+        android:textColorHint="#FF0464"
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER EMAIL HERE"
+        android:id="@+id/email"
+        android:gravity="center"
+        android:inputType="textEmailAddress"/>
+    <TextView
+        android:textColor="#000000"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PASSWORD"/>
+    <EditText
+
+        android:textColor="#6404FF"
+        android:textColorHint="#FF0464"
+        android:layout_marginTop="4dp"
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER PASSWORD HERE"
+        android:gravity="center"
+        android:inputType="textEmailAddress"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FIRST NAME"/>
+            <EditText
+
+                android:textColor="#6404FF"
+                android:textColorHint="#FF0464"
+                android:id="@+id/fname"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="FIRSTNAME"
+                android:gravity="center"
+                android:inputType="textEmailAddress"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LAST NAME"
+                android:gravity="right"/>
+            <EditText
+
+                android:textColor="#6404FF"
+                android:textColorHint="#FF0464"
+                android:id="@+id/lname"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="LASTNAME"
+                android:gravity="center"
+                android:inputType="textEmailAddress"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:textColor="#000000"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:id="@+id/tnc"
+        android:text="BY REGISTERING, YOU AGREE TO OUR TNC"/>
+    <View
+        android:layout_width="300dp"
+        android:layout_marginTop="1dp"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/sv">
+        <TextView
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" \n1. Rules should be followed at any cost \n\n2.clear instructions should be followed\n\n3.
+            charges can be applied in future.\n4.all details are correct"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGNUP "
+        android:background="#18ff00"/>
+    <TextView
+        android:textColor="#000000"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/loginhere"
+        android:layout_height="wrap_content"
+        android:text="Already Have a account login here"/>
+    <View
+        android:layout_width="250dp"
+        android:layout_marginTop="1dp"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+
+</LinearLayout>

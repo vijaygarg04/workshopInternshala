@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardBackgroundColor="#fafcf1"
+    android:padding="10dp"
+    android:layout_margin="4dp">
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+
+                    android:layout_width="match_parent"
+                    android:text="COMPANY NAME"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="#4153ff"
+
+                    android:id="@+id/companyname"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="company name"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:text="PROFILE"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="#4153ff"
+
+                    android:id="@+id/profile"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="profile"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#000000"
+
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COMPANY SHORT DESCRIPTION"/>
+        <TextView
+            android:textSize="18sp"
+            android:textColor="#4153ff"
+
+            android:id="@+id/shortdescription"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SHORT DESCRIPTION"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="18sp"
+                android:textColor="#4153ff"
+
+                android:layout_marginTop="20dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="DATE"
+                android:id="@+id/date"
+                android:gravity="center"/>
+            <Button
+                android:textSize="14sp"
+                android:textColor="#ff0000"
+
+                android:background="#f0feff"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/btnapply"
+                android:layout_height="wrap_content"
+                android:text="APPLY FOR WORKSHOP"
+                android:layout_marginRight="30dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
