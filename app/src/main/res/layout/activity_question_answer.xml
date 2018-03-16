@@ -17,6 +17,8 @@
     android:layout_height="wrap_content"
     android:text="Why Are You Interested For This WorkShop?"/>
     <EditText
+        android:textColor="#6404FF"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Answer"
@@ -31,6 +33,8 @@
         android:layout_height="wrap_content"
         android:text="Skills You Have Already That will help you in this workshop?"/>
     <EditText
+        android:textColor="#6404FF"
+
         android:gravity="right"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

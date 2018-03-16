@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.vijaygarg.workshop.Database.DashBoardDatabase;
+import com.example.vijaygarg.workshop.Database.WorkShopDataBase;
 
 public class QuestionAnswer extends AppCompatActivity {
 EditText answer1,answer2;
@@ -45,9 +46,12 @@ Button submit;
                 }
 
                 dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,susername,sans1,sans2,sdetails);
+                WorkShopDataBase workShopDataBase=new WorkShopDataBase(QuestionAnswer.this);
+                workShopDataBase.delete(scompanyname);
                 Toast.makeText(QuestionAnswer.this,"Successfully Applied",Toast.LENGTH_LONG).show();
                 Intent i=new Intent(QuestionAnswer.this,Workshop.class);
                 i.putExtra("login",susername);
+
                 startActivity(i);
             }
         });

@@ -1,5 +1,6 @@
 package com.example.vijaygarg.workshop;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -71,6 +72,7 @@ String username;
                     i.putExtra("username",username);
                     i.putExtra("details",sdetails);
                     context.startActivity(i);
+
                     //                    dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,username);
 //
 //                    Toast.makeText(context,"Added successfully",Toast.LENGTH_LONG).show();
@@ -80,6 +82,7 @@ String username;
 
                     Toast.makeText(context,"Sorry sign in to apply workshop",Toast.LENGTH_LONG).show();
                 }
+                ((Activity)context).finish();
             }
         });
     }

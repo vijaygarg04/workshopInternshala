@@ -28,4 +28,10 @@ public class DashBoard extends AppCompatActivity {
         rv.setAdapter(myDashBoardAdapter);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

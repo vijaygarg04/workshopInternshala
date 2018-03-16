@@ -75,4 +75,9 @@ public class WorkShopDataBase extends SQLiteOpenHelper{
             return true;
         }
     }
+
+    public void delete(String companyname) {
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.delete(TABLENAME,"CompanyName = ?",new String[]{companyname});
+    }
 }

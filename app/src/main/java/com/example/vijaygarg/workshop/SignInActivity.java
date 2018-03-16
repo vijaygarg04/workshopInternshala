@@ -32,6 +32,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String suname=username.getText().toString().trim();
                 String spass=password.getText().toString().trim();
+                password.setText("");
                 if(suname.length()==0){
                     username.setError("Enter username ");
                  return;
@@ -48,16 +49,20 @@ public class SignInActivity extends AppCompatActivity {
 
                     i.putExtra("login",suname);
                     startActivity(i);
+                    finish();
                 }else{
 
                     Toast.makeText(SignInActivity.this,"LogIn Failed",Toast.LENGTH_LONG).show();
                 }
+                username.setText("");
+
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SignInActivity.this,SignUpActivity.class));
+                finish();
             }
         });
         guest.setOnClickListener(new View.OnClickListener() {

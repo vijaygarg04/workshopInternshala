@@ -85,6 +85,7 @@ CredentialDatabase credentialDatabase;
                     Toast.makeText(SignUpActivity.this,"Account Creation Failed",Toast.LENGTH_LONG).show();
 
                 }
+                finish();
             }
         });
 

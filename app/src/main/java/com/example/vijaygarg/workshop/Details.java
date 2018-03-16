@@ -23,8 +23,8 @@ TextView tvcompany,tvdesc,tvdetails,tvprofile,tvdate,tvans1,tvans2;
 
         String comanyname=b.getString("companyname");
         String description=b.getString("description");
-        String profile=b.getString("profile");
-        String date=b.getString("date");
+        String profile=b.getString("date");
+        String date=b.getString("profile");
         String details=b.getString("details");
         String answer1=b.getString("ans1");
         String answer2=b.getString("ans2");
@@ -44,4 +44,9 @@ TextView tvcompany,tvdesc,tvdetails,tvprofile,tvdate,tvans1,tvans2;
         tvans2.setText(answer2);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
