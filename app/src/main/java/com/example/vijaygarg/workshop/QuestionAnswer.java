@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.vijaygarg.workshop.Database.DashBoardDatabase;
 
@@ -22,12 +23,13 @@ Button submit;
         Intent i=getIntent();
         Bundle b=i.getExtras();
        final DashBoardDatabase dashBoardDatabase=new DashBoardDatabase(this);
-       final String scompanyname,sdescription,sdate,sprofile,susername;
+       final String scompanyname,sdescription,sdate,sprofile,susername,sdetails;
         scompanyname=b.getString("companyname");
         sdescription=b.getString("description");
         sdate=b.getString("profile");
         sprofile=b.getString("date");
         susername=b.getString("username");
+        sdetails=b.getString("details");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,11 +40,15 @@ Button submit;
                     return;
                 }
                 if(sans2.length()<10){
-                    answer1.setError("Answer Should be of min 10 character");
+                    answer2.setError("Answer Should be of min 10 character");
                     return;
                 }
 
-                dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,susername,sans1,sans2);
+                dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,susername,sans1,sans2,sdetails);
+                Toast.makeText(QuestionAnswer.this,"Successfully Applied",Toast.LENGTH_LONG).show();
+                Intent i=new Intent(QuestionAnswer.this,Workshop.class);
+                i.putExtra("login",susername);
+                startActivity(i);
             }
         });
 

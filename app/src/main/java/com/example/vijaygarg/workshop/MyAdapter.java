@@ -43,7 +43,7 @@ String username;
     }
 
     @Override
-    public void onBindViewHolder(final MyViewholder holder, int position) {
+    public void onBindViewHolder(final MyViewholder holder, final int position) {
         holder.companyname.setText(arr.get(position).getCompanyname());
         holder.description.setText(arr.get(position).getDescription());
         holder.date.setText(arr.get(position).getDate());
@@ -55,7 +55,7 @@ String username;
                 if(!login.equals("false")){
 
                     Intent i=new Intent(context,QuestionAnswer.class);
-                    String scompanyname,sdescription,sdate,sprofile;
+                    String scompanyname,sdescription,sdate,sprofile,sdetails;
                     scompanyname=holder.companyname.getText().toString().trim();
                     sdescription=holder.description.getText().toString().trim();
                     sdate=holder.date.getText().toString().trim();
@@ -63,11 +63,13 @@ String username;
                     SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy");
                     sdate=sdf.format(date).toString();
                     sprofile=holder.profile.getText().toString().trim();
+                    sdetails=arr.get(position).getDetails();
                     i.putExtra("companyname",scompanyname);
                     i.putExtra("description",sdescription);
                     i.putExtra("profile",sprofile);
                     i.putExtra("date",sdate);
                     i.putExtra("username",username);
+                    i.putExtra("details",sdetails);
                     context.startActivity(i);
                     //                    dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,username);
 //
