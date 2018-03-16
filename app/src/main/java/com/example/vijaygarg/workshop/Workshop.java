@@ -40,7 +40,10 @@ public class Workshop extends AppCompatActivity {
 
         workShopDataBase=new WorkShopDataBase(this);
         ArrayList<WorkShopModel>arr=workShopDataBase.getData();
-
+if(arr.size()==0){
+    adddata();
+    arr=workShopDataBase.getData();
+}
 
         DashBoardDatabase dashBoardDatabase=new DashBoardDatabase(this);
         MyAdapter myAdapter=new MyAdapter(arr,this,login,dashBoardDatabase,login);
