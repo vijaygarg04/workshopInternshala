@@ -12,7 +12,9 @@ import android.widget.Toast;
 
 import com.example.vijaygarg.workshop.Database.DashBoardDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by vijaygarg on 13/03/18.
@@ -51,14 +53,25 @@ String username;
             public void onClick(View view) {
                 //todo
                 if(!login.equals("false")){
+
+                    Intent i=new Intent(context,QuestionAnswer.class);
                     String scompanyname,sdescription,sdate,sprofile;
                     scompanyname=holder.companyname.getText().toString().trim();
                     sdescription=holder.description.getText().toString().trim();
                     sdate=holder.date.getText().toString().trim();
+                    Date date=new Date();
+                    SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy");
+                    sdate=sdf.format(date).toString();
                     sprofile=holder.profile.getText().toString().trim();
-                    dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,username);
-
-                    Toast.makeText(context,"Added successfully",Toast.LENGTH_LONG).show();
+                    i.putExtra("companyname",scompanyname);
+                    i.putExtra("description",sdescription);
+                    i.putExtra("profile",sprofile);
+                    i.putExtra("date",sdate);
+                    i.putExtra("username",username);
+                    context.startActivity(i);
+                    //                    dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,username);
+//
+//                    Toast.makeText(context,"Added successfully",Toast.LENGTH_LONG).show();
 
                 }else{
                     context.startActivity(new Intent(context,SignInActivity.class));

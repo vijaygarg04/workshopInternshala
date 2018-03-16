@@ -19,6 +19,18 @@
     android:textColor="#5858ff"
     android:text="LIST OF WORKSHOPS APPLIED"/>
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#f84fa8"
+        android:text="Long Press to get details of workshop applied"/>
+
+
     <android.support.v7.widget.RecyclerView
 
         android:id="@+id/rv"

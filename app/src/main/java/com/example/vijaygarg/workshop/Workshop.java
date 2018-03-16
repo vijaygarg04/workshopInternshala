@@ -53,16 +53,16 @@ if(arr.size()==0){
     }
 
     private void adddata() {
-        workShopDataBase.insertdata("amazon",   "android development", "online marketting",     "16/03/2018","online marketting");
-        workShopDataBase.insertdata("flipcart", "android development", "online marketting",     "15/03/2018","online marketting");
-        workShopDataBase.insertdata("microsoft","android development", "software development",  "13/03/2018","software development");
-        workShopDataBase.insertdata("TCS",      "web development",     "software development",  "10/03/2018","SERVICES");
-        workShopDataBase.insertdata("Adobe",    "web development",     "software development",  "07/03/2018","Content Writing");
-        workShopDataBase.insertdata("Mozila",   "web development",     "software development",  "09/03/2018","online marketting");
-        workShopDataBase.insertdata("Lenskart", "android development", "online marketting",     "28/02/2018","online marketting");
-        workShopDataBase.insertdata("Hp",       "Content Writing",     "software development",  "02/03/2018","online marketting");
-        workShopDataBase.insertdata("DRDO",     "android development", "software development",  "11/03/2018","online marketting");
-        workShopDataBase.insertdata("Tata",     "web development",     "software development",  "25/02/2018","online marketting");
+        workShopDataBase.insertdata("amazon",   "android development", "online marketting company",     "16/03/2018","online marketting");
+        workShopDataBase.insertdata("flipcart", "android development", "online marketting company",     "15/03/2018","online marketting");
+        workShopDataBase.insertdata("microsoft","android development", "software development company",  "13/03/2018","software development");
+        workShopDataBase.insertdata("TCS",      "web development",     "software development company",  "10/03/2018","SERVICES");
+        workShopDataBase.insertdata("Adobe",    "web development",     "software development company",  "07/03/2018","Content Writing");
+        workShopDataBase.insertdata("Mozila",   "web development",     "software development company",  "09/03/2018","online marketting");
+        workShopDataBase.insertdata("Lenskart", "android development", "online marketting company",     "28/02/2018","online marketting");
+        workShopDataBase.insertdata("Hp",       "Content Writing",     "software development company",  "02/03/2018","online marketting");
+        workShopDataBase.insertdata("DRDO",     "android development", "software development company",  "11/03/2018","online marketting");
+        workShopDataBase.insertdata("Tata",     "web development",     "software development company",  "25/02/2018","online marketting");
 
 //        workShopDataBase.insertdata("hi","hi","hi","10MARCH2018","We are an innovative startup in the area of hyperlocal home ");
 //        workShopDataBase.insertdata("hi","hi","hi","22FEBRUARY2018","Zen Tech Lab is a startup, established in the United States of America with a vision ");

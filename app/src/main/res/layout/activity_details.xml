@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.vijaygarg.workshop.Details">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Company"
+            android:gravity="left"
+            android:layout_height="wrap_content" />
+<TextView
+    android:layout_marginTop="10dp"
+    android:textSize="17sp"
+    android:textColor="#000000"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:gravity="right"
+    android:layout_height="wrap_content"
+    android:id="@+id/companyname"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Description"
+            android:gravity="left"
+            android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_weight="2"
+        android:gravity="right"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Applied On"
+            android:gravity="left"
+            android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Details"
+            android:gravity="left"
+            android:layout_height="wrap_content" />
+    <TextView
+        android:gravity="right"
+        android:layout_marginTop="10dp"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/details"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="profile"
+            android:gravity="left"
+            android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="10dp"
+android:gravity="right"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile"/>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+
+        android:gravity="right"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Why Are You Interested For This WorkShop?"/>
+    <TextView
+        android:layout_marginTop="10dp"
+android:gravity="right"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/answer1"/>
+    <TextView
+        android:layout_marginTop="10dp"
+
+        android:gravity="right"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Skills You Have Already That will help you in this workshop?"/>
+    <TextView
+        android:layout_marginTop="10dp"
+android:gravity="right"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/answer2"/>
+
+</LinearLayout>

@@ -6,6 +6,33 @@ package com.example.vijaygarg.workshop;
 
 public class WorkShopModel {
     String companyname,profile,description,date,details;
+    String answer1,answer2;
+
+    public WorkShopModel(String companyname, String profile, String description, String date, String details, String answer1, String answer2) {
+        this.companyname = companyname;
+        this.profile = profile;
+        this.description = description;
+        this.date = date;
+        this.details = details;
+        this.answer1 = answer1;
+        this.answer2 = answer2;
+    }
+
+    public String getAnswer1() {
+        return answer1;
+    }
+
+    public void setAnswer1(String answer1) {
+        this.answer1 = answer1;
+    }
+
+    public String getAnswer2() {
+        return answer2;
+    }
+
+    public void setAnswer2(String answer2) {
+        this.answer2 = answer2;
+    }
 
     public WorkShopModel(String companyname, String profile, String description, String date, String details) {
         this.companyname = companyname;

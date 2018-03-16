@@ -23,6 +23,9 @@ public class DashBoardDatabase extends SQLiteOpenHelper {
     public static final String COLUMN3="Description";
     public static final String COLUMN4="Date";
     public static final String COLUMN5="username";
+    public static final String COLUMN6="answer1";
+    public static final String COLUMN7="answer2";
+    public static final String COLUMN8="details";
     public Context context;
 
     public DashBoardDatabase(Context context) {
@@ -33,7 +36,7 @@ public class DashBoardDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String query="CREATE TABLE "+TABLENAME+" ("+COLUMN0+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COLUMN1+" TEXT,"+COLUMN2+" TEXT,"+COLUMN3+" TEXT,"+COLUMN4+" TEXT,"+COLUMN5+" TEXT)";
+        String query="CREATE TABLE "+TABLENAME+" ("+COLUMN0+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COLUMN1+" TEXT,"+COLUMN2+" TEXT,"+COLUMN3+" TEXT,"+COLUMN4+" TEXT,"+COLUMN5+" TEXT, "+COLUMN6+" TEXT,"+COLUMN7+" TEXT,"+COLUMN8+" TEXT)";
         sqLiteDatabase.execSQL(query);
     }
 
@@ -42,7 +45,7 @@ public class DashBoardDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLENAME);
         onCreate(sqLiteDatabase);
     }
-    public boolean insertdata(String companyname,String profile,String description,String date,String uname){
+    public boolean insertdata(String companyname,String profile,String description,String date,String uname,String ans1,String ans2,String details){
 
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
@@ -51,7 +54,9 @@ public class DashBoardDatabase extends SQLiteOpenHelper {
         contentValues.put(COLUMN3,description);
         contentValues.put(COLUMN4,date);
         contentValues.put(COLUMN5,uname);
-
+        contentValues.put(COLUMN6,ans1);
+        contentValues.put(COLUMN7,ans2);
+        contentValues.put(COLUMN8,details);
         long result=db.insert(TABLENAME,null,contentValues);
         if(result==-1){
             return false;}
@@ -68,10 +73,12 @@ public class DashBoardDatabase extends SQLiteOpenHelper {
             String profile=cursor.getString(2);
             String description=cursor.getString(3);
             String date=cursor.getString(4);
-            String details="";
+            String details=cursor.getString(8);
             String uname=cursor.getString(5);
+            String answer1=cursor.getString(6);
+            String answer2=cursor.getString(7);
             if(username.equals(uname)) {
-                WorkShopModel wsm = new WorkShopModel(companyname, profile, description, date, details);
+                WorkShopModel wsm = new WorkShopModel(companyname, profile, description, date, details,answer1,answer2);
                 arr.add(wsm);
             }
         }

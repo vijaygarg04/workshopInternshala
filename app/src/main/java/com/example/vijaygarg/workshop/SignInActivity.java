@@ -32,6 +32,14 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String suname=username.getText().toString().trim();
                 String spass=password.getText().toString().trim();
+                if(suname.length()==0){
+                    username.setError("Enter username ");
+                 return;
+                }
+                if(spass.length()==0){
+                    password.setError("Enter password");
+                    return;
+                }
                 // todo
                 boolean b=credentialDatabase.searchuser(suname,spass);
                 if(b) {

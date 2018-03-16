@@ -55,13 +55,29 @@ CredentialDatabase credentialDatabase;
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String sfname,slname,seamil,spass;
+                String sfname,slname,semail,spass;
                 sfname=fname.getText().toString().trim();
                 slname=lname.getText().toString().trim();
-                seamil=email.getText().toString().trim();
+                semail=email.getText().toString().trim();
                 spass=password.getText().toString().trim();
+                if(sfname.length()==0){
+                    fname.setError("Enter First Name here");
+                    return;
+                }
+                if(slname.length()==0){
+                    lname.setError("Enter Last Name here");
+                    return;
+                }
+                if(semail.length()==0){
+                    fname.setError("Enter Email here");
+                    return;
+                }
+                if(spass.length()==0){
+                    fname.setError("Enter password here");
+                    return;
+                }
 
-                boolean result=credentialDatabase.insertdata(sfname,slname,seamil,spass);
+                boolean result=credentialDatabase.insertdata(sfname,slname,semail,spass);
                 if(result==true){
                     Toast.makeText(SignUpActivity.this,"Account Created Successfully",Toast.LENGTH_LONG).show();
                     startActivity(new Intent(SignUpActivity.this,SignInActivity.class));

@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".Workshop" />
-        <activity android:name=".DashBoard"></activity>
+        <activity android:name=".DashBoard" />
+        <activity android:name=".QuestionAnswer" />
+        <activity android:name=".Details"></activity>
     </application>
 
 </manifest>
