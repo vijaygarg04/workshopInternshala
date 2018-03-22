@@ -26,11 +26,9 @@
     android:textStyle="bold"
     android:textColor="#5207ff"
     />
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:id="@+id/rv"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/frame"></FrameLayout>
 
 </LinearLayout>

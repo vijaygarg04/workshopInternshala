@@ -1,31 +1,34 @@
 package com.example.vijaygarg.workshop;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.vijaygarg.workshop.Database.DashBoardDatabase;
 import com.example.vijaygarg.workshop.Database.WorkShopDataBase;
 
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Workshop extends AppCompatActivity {
+public class Workshop extends AppCompatActivity implements WorkshopFragment.OnListFragmentInteractionListener{
     RecyclerView rv;
-    WorkShopDataBase workShopDataBase;
     String login;
     Button dashboard;
+    TinyDB tinyDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workshop);
         Intent i=getIntent();
+        tinyDB = new TinyDB(Workshop.this);
         Bundle b=i.getExtras();
         login=b.getString("login");
+        //TODO :
         rv=findViewById(R.id.rv);
         dashboard=findViewById(R.id.btndashboard);
         dashboard.setOnClickListener(new View.OnClickListener() {
@@ -36,38 +39,48 @@ public class Workshop extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        tinyDB.putString("login",login);
 
-        workShopDataBase=new WorkShopDataBase(this);
-        ArrayList<WorkShopModel>arr=workShopDataBase.getData();
-if(arr.size()==0){
-    adddata();
-    arr=workShopDataBase.getData();
-}
-
-        DashBoardDatabase dashBoardDatabase=new DashBoardDatabase(this);
-        MyAdapter myAdapter=new MyAdapter(arr,this,login,dashBoardDatabase,login);
-
-        rv.setAdapter(myAdapter);
-
+        WorkshopFragment workshopFragment = new WorkshopFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction().replace(R.id.frame,workshopFragment);
+        fragmentTransaction.commit();
     }
 
-    private void adddata() {
-        workShopDataBase.insertdata("amazon",   "android development", "online marketting company",     "16/03/2018","online marketting");
-        workShopDataBase.insertdata("flipcart", "android development", "online marketting company",     "15/03/2018","online marketting");
-        workShopDataBase.insertdata("microsoft","android development", "software development company",  "13/03/2018","software development");
-        workShopDataBase.insertdata("TCS",      "web development",     "software development company",  "10/03/2018","SERVICES");
-        workShopDataBase.insertdata("Adobe",    "web development",     "software development company",  "07/03/2018","Content Writing");
-        workShopDataBase.insertdata("Mozila",   "web development",     "software development company",  "09/03/2018","online marketting");
-        workShopDataBase.insertdata("Lenskart", "android development", "online marketting company",     "28/02/2018","online marketting");
-        workShopDataBase.insertdata("Hp",       "Content Writing",     "software development company",  "02/03/2018","online marketting");
-        workShopDataBase.insertdata("DRDO",     "android development", "software development company",  "11/03/2018","online marketting");
-        workShopDataBase.insertdata("Tata",     "web development",     "software development company",  "25/02/2018","online marketting");
 
-//        workShopDataBase.insertdata("hi","hi","hi","10MARCH2018","We are an innovative startup in the area of hyperlocal home ");
-//        workShopDataBase.insertdata("hi","hi","hi","22FEBRUARY2018","Zen Tech Lab is a startup, established in the United States of America with a vision ");
-//        workShopDataBase.insertdata("hi","hi","hi","12MARCH2018"," doing business as Amazon is an American electronic ");
-//        workShopDataBase.insertdata("hi","hi","GOLD BUSINESS","15MARCH2018","We provide services in software consultancy  software marketing  development of web application  and \n");
+    @Override
+    public void onListFragmentInteraction(WorkShopModel item) {
 
+        if(!login.equals("false")){
+
+            Intent i=new Intent(this,QuestionAnswer.class);
+            String scompanyname,sdescription,sdate,sprofile,sdetails;
+            scompanyname=item.getCompanyname().toString().trim();
+            sdescription=item.getDescription().toString().trim();
+            sdate=item.getDate().toString().trim();
+            Date date=new Date();
+            SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy");
+            sdate=sdf.format(date).toString();
+            sprofile=item.getProfile().toString().trim();
+            sdetails=item.getDetails();
+            i.putExtra("companyname",scompanyname);
+            i.putExtra("description",sdescription);
+            i.putExtra("profile",sprofile);
+            i.putExtra("date",sdate);
+            i.putExtra("username",login);
+            i.putExtra("details",sdetails);
+            startActivity(i);
+
+            //                    dashBoardDatabase.insertdata(scompanyname,sprofile,sdescription,sdate,username);
+//
+//                    Toast.makeText(context,"Added successfully",Toast.LENGTH_LONG).show();
+
+        }else{
+            startActivity(new Intent(this,SignInActivity.class));
+
+            Toast.makeText(this,"Sorry sign in to apply workshop",Toast.LENGTH_LONG).show();
+        }
+        finish();
     }
+
+
 }

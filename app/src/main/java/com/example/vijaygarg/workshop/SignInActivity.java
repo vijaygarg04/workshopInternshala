@@ -17,6 +17,7 @@ public class SignInActivity extends AppCompatActivity {
     Button login;
     TextView signup,guest;
     CredentialDatabase credentialDatabase;
+    TinyDB tinyDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,8 @@ public class SignInActivity extends AppCompatActivity {
         login=findViewById(R.id.btnlogin);
         signup=findViewById(R.id.tvcreate);
         guest=findViewById(R.id.tvguest);
+        tinyDB = new TinyDB(SignInActivity.this);
+
         credentialDatabase=new CredentialDatabase(this);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +51,7 @@ public class SignInActivity extends AppCompatActivity {
                     Intent i = new Intent(SignInActivity.this, Workshop.class);
 
                     i.putExtra("login",suname);
+                    tinyDB.putString("login",suname);
                     startActivity(i);
                     finish();
                 }else{
@@ -70,6 +74,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i=new Intent(SignInActivity.this,Workshop.class);
                 i.putExtra("login","false");
+                tinyDB.putString("login","false");
                 startActivity(i);
 
             }
